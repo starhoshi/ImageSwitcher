@@ -11,6 +11,7 @@
   "browser_action": {
     "default_icon": "icons/icon19.png"
   },
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
