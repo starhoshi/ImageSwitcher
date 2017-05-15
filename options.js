@@ -1,4 +1,7 @@
-function save_options() {
+var emptyRow = "<div><label>from: <input type='text'></label> <label>to: <input type='text'></label></div>";
+var switchList = document.getElementById('switch_list');
+
+function saveOptions() {
     var color = document.getElementById('color').value;
     var likesColor = document.getElementById('like').checked;
     chrome.storage.sync.set({
@@ -14,12 +17,17 @@ function save_options() {
     });
 }
 
-function restore_options() {
+function restoreOptions() {
     chrome.storage.sync.get(null, function (items) {
         console.log(items);
+        insertEmptyRow()
     });
 }
 
-document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('status').addEventListener('click', save_options);
+function insertEmptyRow() {
+    switchList.insertAdjacentHTML("beforeend", emptyRow);
+}
 
+document.addEventListener('DOMContentLoaded', restoreOptions);
+document.getElementById('status').addEventListener('click', saveOptions);
+document.getElementById('add_row').addEventListener('click', insertEmptyRow);
