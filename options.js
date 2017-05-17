@@ -1,4 +1,3 @@
-var emptyRow = "<div><label>from: <input type='text'></label> <label>to: <input type='text'></label></div>";
 var switchList = document.getElementById('switch_list');
 
 function saveOptions() {
@@ -25,7 +24,14 @@ function restoreOptions() {
 }
 
 function insertEmptyRow() {
-    switchList.insertAdjacentHTML("beforeend", emptyRow);
+    switchList.insertAdjacentHTML("beforeend", newRow("", ""));
+}
+
+function newRow(from, to) {
+    var div = "<div>";
+    var fromLabel = "<label>from: <input type='text' value='" + from + "'></label>";
+    var toLabel = " <label>to: <input type='text' value='" + to + "'></label>";
+    return div + fromLabel + toLabel + "</div>"
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
