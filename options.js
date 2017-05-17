@@ -28,9 +28,21 @@ function insertEmptyRow() {
 }
 
 function newRow(from, to) {
+    var inputLength = document.querySelectorAll('input').length / 2;
+    var id = 0;
+    if (inputLength > 0) {
+        id = inputLength
+    }
+    console.log(id);
+
+    if (to == null || to == '') {
+        to = 'https://raw.githubusercontent.com/starhoshi/ImageSwitcher/master/icons/icon128.png';
+    }
+
+    var placeholder = 'https://www.gravatar.com/avatar/1';
     var div = "<div>";
-    var fromLabel = "<label>from: <input type='text' value='" + from + "'></label>";
-    var toLabel = " <label>to: <input type='text' value='" + to + "'></label>";
+    var fromLabel = "<label>from: <input placeholder='" + placeholder + "' class='from' id='from" + id + "' type='text' value='" + from + "'></label>";
+    var toLabel = " <label>to: <input placeholder='" + placeholder + "' class='to' id='to" + id + "' type='text' value='" + to + "'></label>";
     return div + fromLabel + toLabel + "</div>"
 }
 
