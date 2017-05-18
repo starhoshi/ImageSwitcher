@@ -6,23 +6,23 @@ function saveOptions() {
 
     chrome.storage.sync.clear();
 
-    var switchers = []
-    var switcher = {from: '', to: ''}
-    document.querySelectorAll('input').forEach(function(input, index){
-      if(index % 2 == 0){
-        switcher.from = input.value
-      }
-
-      if(index % 2 == 1){
-        switcher.to = input.value
-        if(switcher.from !== '' && switcher.from !== null) {
-          switchers.push(switcher);
+    var switchers = [];
+    var switcher = {from: '', to: ''};
+    document.querySelectorAll('input').forEach(function (input, index) {
+        if (index % 2 == 0) {
+            switcher.from = input.value
         }
-        switcher = {from: '', to: ''}
-      }
+
+        if (index % 2 == 1) {
+            switcher.to = input.value;
+            if (switcher.from !== '' && switcher.from !== null) {
+                switchers.push(switcher);
+            }
+            switcher = {from: '', to: ''}
+        }
     });
 
-    chrome.storage.sync.set({'data': switchers} , function () {
+    chrome.storage.sync.set({'data': switchers}, function () {
         // Update status to let user know options were saved.
         status.textContent = 'Options saved.';
         setTimeout(function () {
@@ -33,17 +33,17 @@ function saveOptions() {
 
 function restoreOptions() {
     chrome.storage.sync.get(null, function (items) {
-        if(items.data){
-          items.data.forEach(function(switcher) {
-            insertRow(switcher);
-          });
+        if (items.data) {
+            items.data.forEach(function (switcher) {
+                insertRow(switcher);
+            });
         }
         insertEmptyRow()
     });
 }
 
-function insertRow(switcher){
-  switchList.insertAdjacentHTML("beforeend", newRow(switcher.from, switcher.to));
+function insertRow(switcher) {
+    switchList.insertAdjacentHTML("beforeend", newRow(switcher.from, switcher.to));
 }
 
 function insertEmptyRow() {

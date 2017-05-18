@@ -1,6 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Image Switcher",
+  "short_name": "ImageSwitcher",
   "description": "Let's switch images you do not want to see to other one.",
   "version": "1.0.0",
   "icons": {
