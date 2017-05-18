@@ -1,5 +1,7 @@
 # ImageSwitcher
 
+![icon128\.png \(128×128\)](https://raw.githubusercontent.com/starhoshi/ImageSwitcher/master/icons/icon128.png)
+
 [Image Switcher \- Chrome ウェブストア](https://chrome.google.com/webstore/detail/image-switcher/agbenbfomghnjfbelmoeplkjcflogomb)
 
 Let's switch images you do not want to see to other one.  
