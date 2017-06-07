@@ -13,6 +13,5 @@
         });
     }
     switchImages();
-    setInterval(switchImages,1000);
 }());
 
