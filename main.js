@@ -30,8 +30,8 @@
                 break;
                 case "attributes":
                 if(mutationRecord.target instanceof HTMLElement) {
-                    if(mutationRecord.target.tagName.toLowerCase()==="img") {
-                      switchImage(mutationRecord.target);
+                    if(mutationRecord.target.tagName.toLowerCase() === "img") {
+                        switchImage(mutationRecord.target);
                     }
                 }
                 break;
@@ -46,8 +46,8 @@
     var config={
         childList: true,
         subtree: true,
-        attributes:true,
-        attributeFilter:["src"],
+        attributes: true,
+        attributeFilter: ["src"],
     };
     mutationObserver.observe(body, config);
 
