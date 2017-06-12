@@ -65,4 +65,3 @@ function newRow(from, to) {
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', saveOptions);
 document.getElementById('add_row').addEventListener('click', insertEmptyRow);
-

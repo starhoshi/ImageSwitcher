@@ -17,7 +17,6 @@
         });
     }
 
-    switchAllImages();
     var mutationObserver = new MutationObserver(function (mutationRecordsList) {
         mutationRecordsList.forEach(function (mutationRecord) {
             switch (mutationRecord.type) {
@@ -52,6 +51,5 @@
         attributeFilter: ["src"],
     };
     mutationObserver.observe(body, config);
-
-
+    switchAllImages();
 }());
